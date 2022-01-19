@@ -1,6 +1,7 @@
 import collections
 
 solutions = set()
+double_count = 0
 
 def parse():
     data = open("solutions.txt", "r")
@@ -12,19 +13,16 @@ def parse():
 
 
 def analyze():
-    doubles = False
+    global double_count
     for s in solutions:
         for i in range(len(s)):
             c = s[i]
             if c in s[i+1:]:
-                print("found: " + s)
-                doubles = True
+                double_count +=1
                 break
-        if doubles:
-            break
 
-    if not doubles:
-        print("no doubles")
+    per = 100 * double_count / len(solutions)
+    print("double_count", double_count, "solution count", len(solutions), per)
 
 def main():
     parse()
