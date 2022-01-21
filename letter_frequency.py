@@ -16,7 +16,8 @@ def parse():
 
 def analyze():
     for s in solutions:
-        for c in s:
+        s_set = set(s)
+        for c in s_set:
             result[c] += 1
 
     #base = sum(result.values())

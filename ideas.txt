@@ -1,0 +1,3 @@
+play through a bunch for scoring purposes
+drop low scoring position when double
+excel'erize the position*letter score table

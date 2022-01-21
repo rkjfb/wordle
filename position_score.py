@@ -42,9 +42,18 @@ def analyze():
 
 def dump():
     sorted_dict = {k: v for k, v in sorted(guess_score.items(), key=lambda item: item[1])}
-    data = open("green_score.txt", "w")
+    data = open("position_score.txt", "w")
     for k,v in reversed(sorted_dict.items()):
         data.write(k + " " + str(v) + '\n')
+
+    data = open("position_score_table.txt", "w")
+    for c in "abcdefghijklmnopqrstuvwxyz":
+        line = c + " "
+        for i in range(5):
+            line += str(score[i][c]) + " "
+        
+        data.write(line + "\n")
+
 
 def main():
     parse()
